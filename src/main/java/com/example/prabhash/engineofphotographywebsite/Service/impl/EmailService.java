@@ -1,5 +1,7 @@
 package com.example.prabhash.engineofphotographywebsite.Service.impl;
 
+import com.example.prabhash.engineofphotographywebsite.Service.SuperService;
+import com.example.prabhash.engineofphotographywebsite.dto.SuperDto;
 import com.example.prabhash.engineofphotographywebsite.dto.UserDto;
 import com.example.prabhash.engineofphotographywebsite.repo.EmailRepo;
 import com.example.prabhash.engineofphotographywebsite.res.Response;
@@ -13,7 +15,7 @@ import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Service;
 
 @Service
-public class EmailService {
+public class EmailService implements SuperService {
 
     @Autowired
     private JavaMailSender javaMailSender;
@@ -57,4 +59,18 @@ public class EmailService {
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
 
+    @Override
+    public ResponseEntity<Response> search(String id) {
+        return null;
+    }
+
+    @Override
+    public ResponseEntity<Response> save(SuperDto superDto) {
+        return null;
+    }
+
+    @Override
+    public ResponseEntity<Response> createAndSendResponse(int statusCode, String msg, Object data) {
+        return null;
+    }
 }
